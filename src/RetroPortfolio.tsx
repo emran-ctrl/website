@@ -51,7 +51,7 @@ const PROJECTS = [
 
 export default function RetroPortfolio() {
   const [heroText, setHeroText] = useState('');
-  const fullText = "Hello World! I am Player 1, a Systems & Infrastructure Developer.";
+  const fullText = "Hello World! I am Emran, a Systems & Infrastructure Developer.";
 
   // Terminal typing effect
   useEffect(() => {
@@ -81,7 +81,7 @@ export default function RetroPortfolio() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-2 text-2xl font-bold tracking-widest uppercase">
             <Gamepad2 className="text-[#cbd45f]" size={32} />
-            <span>Player 1</span>
+            <span>Emran</span>
           </div>
           <div className="flex items-center gap-6 text-sm font-bold">
             <a href="#about" className="hover:text-[#e2e5bd] transition-colors">ABOUT</a>
@@ -258,7 +258,7 @@ export default function RetroPortfolio() {
       </main>
 
       <footer className="text-center py-6 border-t-TT border-[#cbd45f] bg-[#0d0e07] text-sm">
-        <p>SYSTEM_UPTIME: 99.9% | DESIGNED_BY_PLAYER_1 © 2026</p>
+        <p>SYSTEM_UPTIME: 99.9% | Emran  © 2026</p>
       </footer>
       <MouseCat />
     </div>
