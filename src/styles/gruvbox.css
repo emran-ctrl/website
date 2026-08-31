@@ -1,0 +1,26 @@
+ :root {                                                                                                      
+     --gruvbox-bg: #282828;                                                                                     
+     --gruvbox-fg: #f8f8f2;                                                                                     
+     --gruvbox-border: #4f4f4f;                                                                                 
+     --gruvbox-cursor: #83a0be;                                                                                 
+   }                                                                                                            
+                                                                                                                
+   .terminal {                                                                                                  
+     background-color: var(--gruvbox-bg);                                                                       
+     color: var(--gruvbox-fg);                                                                                  
+     border: 1px solid var(--gruvbox-border);                                                                   
+     font-family: "Fira Code", "Courier New", monospace;                                                        
+     padding: 12px;                                                                                             
+     border-radius: 4px;                                                                                        
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);                                                                  
+     font-size: 14px;                                                                                           
+   }                                                                                                            
+                                                                                                                
+   .terminal p {                                                                                                
+     line-height: 1.3;                                                                                          
+     margin: 0;                                                                                                 
+   }                                                                                                            
+                                                                                                                
+   .terminal .text-primary {                                                                                    
+     color: var(--gruvbox-cursor);                                                                              
+   } 
