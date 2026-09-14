@@ -170,7 +170,7 @@ export default function MouseCat() {
       style={{
         width: `${SPRITE_SIZE}px`,
         height: `${SPRITE_SIZE}px`,
-        backgroundColor: '#cbd45f',
+        backgroundColor: '#6c7234',
         backgroundImage: `url(${nekoGif})`,
         maskImage: `url(${nekoGif})`,
         WebkitMaskImage: `url(${nekoGif})`,
