@@ -65,7 +65,7 @@ const PROJECTS = [
 
 export default function RetroPortfolio() {
   const [heroText, setHeroText] = useState('');
-  const fullText = "Hello World! I am Emran, a Systems & Infrastructure Developer.";
+  const fullText = "Hello World! I am Emran, a Systems Developer & Security Specialist.";
 
   // Terminal typing effect
   useEffect(() => {
