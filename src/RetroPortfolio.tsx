@@ -2,12 +2,10 @@ import { useState, useEffect } from 'react';
 import MouseCat from './MouseCat';
 import {
   Terminal,
-  Gamepad2,
   Send,
   Github,
   Linkedin,
   Twitter,
-  Cpu,
   Server,
   Shield,
   Code2,
@@ -20,9 +18,32 @@ const SKILLS = [
   { name: 'Go (Golang)', level: 4, icon: <Code2 size={24} /> },
   { name: 'Kubernetes', level: 3, icon: <Box size={24} /> },
   { name: 'Docker / OCI', level: 4, icon: <Box size={24} /> },
-  { name: 'Ubuntu / Linux', level: 5, icon: <TerminalSquare size={24} /> },
-  { name: 'x86-64 Assembly', level: 3, icon: <Cpu size={24} /> },
-  { name: 'Network Security', level: 4, icon: <Shield size={24} /> }
+  { name: 'Linux', level: 5, icon: <TerminalSquare size={24} /> },
+  { name: 'Web Security', level: 4, icon: <Shield size={24} /> }
+];
+
+const EXPERIENCE = [
+  {
+    role: 'Trusted Systems Developer',
+    org: 'Information Network Security Administration',
+    period: '2022 — 2025',
+    tasks: [
+      'Research, develop, and demo a secure kernel based off of seL4.',
+      'Kernel / OS-level system demos covering interprocess communication, address space, and memory management.',
+      'Low-level systems engineering with a focus on formal methods and trusted computing.'
+    ]
+  },
+  {
+    role: 'Cybersecurity Specialist',
+    org: 'FULL-STACK SYSTEMS',
+    period: '2025 — PRESENT',
+    tasks: [
+      'Conducted offensive security engagements: penetration testing, vulnerability assessment, and exploitation of web, network, and infrastructure targets.',
+      'Authored detailed pentest reports documenting findings, impact, and remediation steps for clients and leadership.',
+      'Suggested hardening implementations, including firewall rules, WAF configuration, and SAST integration into development pipelines.',
+      'Built backend services using NestJS with Hasura for GraphQL APIs and database layer management.'
+    ]
+  }
 ];
 
 const PROJECTS = [
@@ -34,18 +55,11 @@ const PROJECTS = [
     link: '#'
   },
   {
-    title: 'Go Sys-Logic Engine',
+    title: 'berbir',
     description:
-      'Low-level mathematical logic implementations in Go, leveraging precise pointer receivers and strict package hierarchies.',
-    tags: ['Go', 'Architecture', 'Algorithms'],
-    link: '#'
-  },
-  {
-    title: 'BlackArch Hyprland Env',
-    description:
-      'Customized penetration testing environment coupling the BlackArch repository with a highly optimized Hyprland compositor.',
-    tags: ['Security', 'Bash', 'UI/UX'],
-    link: '#'
+      'Rust-based web vulnerability scanner with a Nuclei-style template engine, Axum API, SQLite persistence, and a live WASM dashboard.',
+    tags: ['Rust', 'Security', 'Axum', 'WebAssembly'],
+    link: 'https://github.com/emran-ctrl/berbir'
   }
 ];
 
@@ -64,15 +78,6 @@ export default function RetroPortfolio() {
     return () => clearInterval(timer);
   }, []);
 
-  // Utility to render 8-bit style power bars
-  const renderPowerBar = (level: number) => {
-    return Array.from({ length: 5 }).map((_, i) => (
-      <span key={i} className={i < level ? 'text-[#aab53c]' : 'text-[#4d512f]'}>
-        {i < level ? '■' : '□'}
-      </span>
-    ));
-  };
-
   return (
     <div className="min-h-screen bg-[#101208] text-[#aab53c] font-mono selection:bg-[#cbd45f] selection:text-[#101208]">
 
@@ -80,11 +85,11 @@ export default function RetroPortfolio() {
       <nav className="fixed top-0 w-full bg-[#101208] border-b border-[#cbd45f] z-50 p-4 shadow-[0px_2px_0px_0px_rgba(203,212,95,0.5)]">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-2 text-2xl font-bold tracking-widest uppercase">
-            <Gamepad2 className="text-[#cbd45f]" size={32} />
             <span>Emran</span>
           </div>
           <div className="flex items-center gap-6 text-sm font-bold">
             <a href="#about" className="hover:text-[#e2e5bd] transition-colors">ABOUT</a>
+            <a href="#experience" className="hover:text-[#e2e5bd] transition-colors">EXPERIENCE</a>
             <a href="#skills" className="hover:text-[#e2e5bd] transition-colors">SKILLS</a>
             <a href="#projects" className="hover:text-[#e2e5bd] transition-colors">PROJECTS</a>
             <a href="#contact" className="hover:text-[#e2e5bd] transition-colors">CONTACT</a>
@@ -131,7 +136,6 @@ export default function RetroPortfolio() {
             <div className="col-span-1 flex justify-center">
               <div className="w-64 h-64 border-2 border-dashed border-[#cbd45f] p-2 flex items-center justify-center bg-[#0d0e07]/50 shadow-[4px_4px_0px_0px_rgba(203,212,95,0.5)]">
                 <div className="text-center space-y-4">
-                  <Gamepad2 size={64} className="mx-auto text-[#aab53c] animate-pulse" />
                   <p className="text-sm">AVATAR_MISSING.PNG</p>
                 </div>
               </div>
@@ -149,7 +153,35 @@ export default function RetroPortfolio() {
           </div>
         </section>
 
-        {/* 4. SKILLS MATRIX */}
+        {/* 4. EXPERIENCE LOG */}
+        <section id="experience" className="scroll-mt-32">
+          <h2 className="text-4xl font-black mb-12 flex items-center gap-4">
+            <span className="text-[#cbd45f]">#</span> EXPERIENCE_LOG
+          </h2>
+          <div className="space-y-8">
+            {EXPERIENCE.map((job, idx) => (
+              <div key={idx} className="bg-[#0d0e07] border-2 border-[#cbd45f] shadow-[4px_4px_0px_0px_rgba(203,212,95,1)] hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(203,212,95,1)] transition-all duration-300">
+                <div className="flex flex-wrap justify-between items-center gap-4 border-b-2 border-[#cbd45f] bg-[#aab53c]/5 px-6 py-4">
+                  <div>
+                    <h3 className="text-2xl font-bold uppercase">{job.role}</h3>
+                    <p className="text-sm text-[#8f9468] uppercase font-bold">{job.org}</p>
+                  </div>
+                  <span className="text-sm font-black bg-[#101208] border border-[#aab53c] px-3 py-1 uppercase">{job.period}</span>
+                </div>
+                <ul className="px-6 py-5 space-y-3 text-[#d6daae]">
+                  {job.tasks.map(task => (
+                    <li key={task} className="flex gap-3">
+                      <span className="text-[#cbd45f] shrink-0">{'>'}</span>
+                      <span>{task}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* 5. SKILLS MATRIX */}
         <section id="skills" className="scroll-mt-32">
           <h2 className="text-4xl font-black mb-12 flex items-center gap-4">
             <span className="text-[#cbd45f]">#</span> TECH_SKILLS
@@ -163,10 +195,7 @@ export default function RetroPortfolio() {
                   </div>
                   <h3 className="text-xl font-bold uppercase">{skill.name}</h3>
                 </div>
-                <div className="flex justify-between items-center text-xl tracking-widest mt-4 border-t-TT border-[#aab53c]/30 pt-4">
-                  <span className="text-sm uppercase text-[#8f9468]">Power:</span>
-                  <div>{renderPowerBar(skill.level)}</div>
-                </div>
+                
               </div>
             ))}
           </div>
@@ -175,7 +204,7 @@ export default function RetroPortfolio() {
         {/* 5. PROJECTS SHOWCASE */}
         <section id="projects" className="scroll-mt-32">
           <h2 className="text-4xl font-black mb-12 flex items-center gap-4">
-            <span className="text-[#cbd45f]">#</span> ACTIVE_QUESTS
+            <span className="text-[#cbd45f]">#</span> PROJECTS
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             {PROJECTS.map((project, idx) => (
@@ -194,10 +223,9 @@ export default function RetroPortfolio() {
                       </span>
                     ))}
                   </div>
-                  <button className="w-full py-3 bg-transparent border border-[#aab53c] text-[#aab53c] font-bold uppercase hover:bg-[#aab53c] hover:text-[#101208] transition-colors flex justify-center items-center gap-2">
-                    <Gamepad2 size={18} />
-                    INITIATE
-                  </button>
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="w-full py-3 bg-transparent border border-[#aab53c] text-[#aab53c] font-bold uppercase hover:bg-[#aab53c] hover:text-[#101208] transition-colors flex justify-center items-center gap-2">
+                    SOURCE
+                  </a>
                 </div>
               </div>
             ))}
