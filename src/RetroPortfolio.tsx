@@ -142,12 +142,12 @@ export default function RetroPortfolio() {
             </div>
             <div className="col-span-2 bg-[#0d0e07] border-2 border-[#aab53c] p-8 shadow-[4px_4px_0px_0px_rgba(170,181,60,1)] space-y-4 text-lg leading-relaxed">
               <p>{'>'} STATUS: ONLINE</p>
-              <p>{'>'} CLASS: CLOUD_ENGINEER / BACKEND_DEV</p>
+              <p>{'>'} CLASS: SYSTEMS_DEV / SECURITY_SPECIALIST</p>
               <p className="text-[#d6daae] mt-4">
-                I specialize in building resilient infrastructure and high-performance system-level applications.
-                My workflow is heavily anchored in Linux environments, leveraging modal editors and automated pipelines
-                to scale deployments. When I'm not orchestrating containers, I'm diving into low-level assembly syntax
-                or optimizing network security protocols.
+                I research and develop secure systems at the kernel and OS level, diving deep into low-level
+                internals. On the offensive side, I run penetration testing engagements and suggest hardening
+                implementations — firewall, WAF, and SAST pipelines. I also build backend applications with
+                NestJS and Hasura, orchestrate Kubernetes clusters, and write tooling in Go and Rust.
               </p>
             </div>
           </div>
