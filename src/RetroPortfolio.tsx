@@ -35,7 +35,7 @@ const EXPERIENCE = [
   },
   {
     role: 'Cybersecurity Specialist',
-    org: 'FULL-STACK SYSTEMS',
+    org: 'E-LMIS',
     period: '2025 — PRESENT',
     tasks: [
       'Conducted offensive security engagements: penetration testing, vulnerability assessment, and exploitation of web, network, and infrastructure targets.',
@@ -195,7 +195,7 @@ export default function RetroPortfolio() {
                   </div>
                   <h3 className="text-xl font-bold uppercase">{skill.name}</h3>
                 </div>
-                
+
               </div>
             ))}
           </div>
