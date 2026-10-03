@@ -31,9 +31,9 @@ export default function MouseCat() {
     const cat = catRef.current;
     if (!cat) return;
 
-    if (
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    ) {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (reduceMotion || !canHover) {
       return;
     }
 

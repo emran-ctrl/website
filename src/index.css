@@ -1,2 +1,36 @@
 @import "tailwindcss";
-@import "./styles/gruvbox.css";
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: clip;
+    text-rendering: optimizeLegibility;
+    font-synthesis: none;
+    scroll-behavior: smooth;
+    scroll-padding-top: 4.5rem; /* ~72px mobile */
+  }
+  @media (min-width: 640px) {
+    html {
+      scroll-padding-top: 5rem; /* ~80px sm */
+    }
+  }
+  @media (min-width: 1024px) {
+    html {
+      scroll-padding-top: 5.25rem; /* ~84px lg */
+    }
+  }
+  body {
+    overflow-x: clip;
+  }
+  button,
+  a,
+  button {
+    touch-action: manipulation;
+  }
+  /* Prevent iOS zoom on inputs (16px minimum) */
+  input,
+  textarea {
+    font-size: 16px;
+  }
+}
