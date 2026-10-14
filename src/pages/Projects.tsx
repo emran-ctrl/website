@@ -14,6 +14,13 @@ const PROJECTS = [
       'Rust-based web vulnerability scanner with a Nuclei-style template engine, Axum API, SQLite persistence, and a live WASM dashboard.',
     tags: ['Rust', 'Security', 'Axum', 'WebAssembly'],
     link: 'https://github.com/emran-ctrl/berbir'
+  },
+  {
+    title: 'ey',
+    description:
+      'Go CLI system monitor sampling disk, memory, CPU, and top-process usage, firing Slack / Discord webhook alerts when configurable thresholds are exceeded.',
+    tags: ['Go', 'CLI', 'Monitoring', 'DevOps'],
+    link: 'https://github.com/emran-ctrl/ey'
   }
 ];
 
