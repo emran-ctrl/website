@@ -16,10 +16,9 @@ export default function About() {
           <p>{'>'} STATUS: ONLINE</p>
           <p>{'>'} CLASS: SYSTEMS_DEV / SECURITY_SPECIALIST</p>
           <p className="text-[#d6daae] mt-4">
-            I research and develop secure systems at the kernel and OS level, diving deep into low-level
-            internals. On the offensive side, I run penetration testing engagements and suggest hardening
-            implementations — firewall, WAF, and SAST pipelines. I also build backend applications with
-            NestJS and Hasura, orchestrate Kubernetes clusters, and write tooling in Go and Rust.
+            I build backend systems and APIs with Go (Golang), NestJS, and Hasura, backed by databases and
+            container orchestration on Kubernetes. I care deeply about security at every layer, from hardening
+            services with firewall, WAF, and SAST pipelines to low-level systems work in Rust.
           </p>
         </div>
       </div>
